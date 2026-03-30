@@ -1,0 +1,105 @@
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+@use '../abstracts' as *;
+
+@layer components {
+    .preview-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "sedan"
+            "suv"
+            "luxury";
+
+        width: 100%;
+        max-width:f.rem(327);
+
+        border-radius: var(--r-sm);
+        overflow: hidden;
+
+        @include m.up(md) {         
+            max-width: f.rem(608);
+        }
+
+        @include m.up(lg) {         
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+            "sedan suv luxury";
+            max-width: f.rem(921);
+        }
+
+        &__component {
+            display: flex;
+            flex-direction: column;
+            
+            gap: var(--sp-400);
+            padding: var(--sp-600);
+
+
+            @include m.up(md) {
+                padding: var(--sp-600) var(--sp-1000);
+            }
+
+            @include m.up(lg) {
+                padding: var(--sp-600);
+                gap: var(--sp-500);
+            }
+
+            &--sedan {
+                grid-area: sedan;
+                background-color:var(--clr-sedan-surface);
+            }
+            &--suv {
+                grid-area: suv;
+                background-color:var(--clr-suv-surface);
+            }
+            &--luxury {
+                grid-area: luxury;
+                background-color:var(--clr-luxury-surface);
+            }
+        }
+
+        &__icon {
+            width: f.rem(64);
+            height: f.rem(40);
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            
+            gap: var(--sp-300);
+            @include m.up(lg) {
+                gap: var(--sp-1000);
+            }
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            
+            gap: var(--sp-300);
+
+        }
+
+        &__title {
+            font-family: var(--ff-title);
+            font-size: var(--fs-title);
+            font-weight: var(--fw-bold);
+            line-height: var(--lh-title); 
+            
+            color:var(--clr-text-heading);
+        }
+
+        &__text {
+            font-size: var(--fs-body);
+            font-weight: var(--fw-regular);
+            line-height: var(--lh-base);
+            
+            color: var(--clr-text-body);
+            opacity: 0.75;
+        }
+    }
+
+}
