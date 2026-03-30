@@ -1,0 +1,18 @@
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+
+@layer base {
+    :root {
+        --fs-title:  #{f.rem(40)};
+        --fs-body:   #{f.rem(15)};
+        --fs-button: #{f.rem(15)};
+
+        --fw-regular: 400;
+        --fw-bold:   700;
+
+        --lh-title: 1.20;
+        --lh-base:  1.65;
+    }
+
+}
+
