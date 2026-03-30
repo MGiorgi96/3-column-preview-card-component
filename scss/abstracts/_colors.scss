@@ -1,0 +1,38 @@
+
+@layer tokens {
+    :root {
+        /* Base Color Tokens */
+        --clr-white:     #FFFFFF;
+        --clr-black:     #000000;
+
+        --clr-gray-100:  #F2F2F2;
+
+        --clr-green-950: #004140;
+        --clr-green-500: #19B89D;
+        
+        --clr-cyan-800:  #006971;
+        --clr-cyan-500:  #26B5C0;
+
+
+        --clr-gold-500:  #E28625;
+        --clr-gold-200:  #FFD473;
+
+        /* Semantic Colors */
+        --clr-background:             var(--clr-gray-100);
+        --clr-sedan-surface:          var(--clr-gold-500);
+        --clr-suv-surface:            var(--clr-cyan-800);
+        --clr-luxury-surface:         var(--clr-green-950);
+        --clr-text-body:              var(--clr-white);
+        --clr-text-heading:           var(--clr-gray-100);
+        --clr-text-sedan-button:      var(--clr-gold-500);
+        --clr-text-suv-button:        var(--clr-cyan-800);
+        --clr-text-luxury-button:     var(--clr-green-950);
+        --clr-text-button-hover:      var(--clr-white);
+        --clr-button-bg:              var(--clr-gray-100);
+        --clr-sedan-button-bg-hover:  var(--clr-gold-500);
+        --clr-suv-button-bg-hover:    var(--clr-cyan-800);
+        --clr-luxury-button-bg-hover: var(--clr-green-950);
+        --clr-button-border-hover:          var(--clr-white);
+    }
+}
+
