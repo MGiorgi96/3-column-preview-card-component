@@ -1,0 +1,70 @@
+@use '../abstracts/functions' as f;
+@use '../abstracts/mixins' as m;
+@use '../abstracts' as *;
+
+@layer components {
+    .preview-card {
+        &__button {
+            display: inline-flex;
+            
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            max-width: f.rem(147);
+            min-height: f.rem(48);
+            padding: var(--sp-100) var(--sp-400);
+            
+            border-radius: var(--r-xl);
+            border:2px solid transparent;
+
+            font-size: var(--fs-button);
+            font-weight: var(--fw-regular);
+            line-height: var(--lh-base);
+
+            white-space: nowrap;
+
+            background-color: var(--clr-button-bg);
+            @include m.up(lg) {
+                &:hover {
+                    color: var(--clr-text-button-hover);
+
+                    cursor: pointer;
+                    border-color: var(--clr-button-border-hover);
+                }
+            }
+
+
+            &--sedan {
+                color: var(--clr-text-sedan-button);
+            }
+
+            &--sedan:hover {
+                @include m.up(lg) {
+                    background-color: var(--clr-sedan-button-bg-hover);
+                }
+            }   
+
+            &--suv {
+                color: var(--clr-text-suv-button);
+            }
+
+            &--suv:hover {
+                @include m.up(lg) {
+                    background-color: var(--clr-suv-button-bg-hover);
+                }
+            }
+
+
+            &--luxury {
+                color: var(--clr-text-luxury-button);
+            }
+
+            &--luxury:hover {
+                @include m.up(lg) {
+                    background-color: var(--clr-luxury-button-bg-hover);
+                }
+            }
+        }
+    } 
+}
