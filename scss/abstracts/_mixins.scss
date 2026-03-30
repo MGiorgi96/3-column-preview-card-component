@@ -1,0 +1,42 @@
+@use 'sass:map';
+@use '../abstracts/functions' as f;
+
+/* -------------------------------------------------------------
+    RESPONSIVE BREAKPOINTS
+    Utility mixins: up(), down(), between().
+    Accepts semantic keys: md / lg / xl.
+------------------------------------------------------------- */
+
+$breakpoints: (
+    md: f.em(768),
+    lg: f.em(1024), 
+    xl: f.em(1440), 
+);
+
+@mixin up($size) {
+    @media (min-width: map.get($breakpoints, $size)) {
+        @content;
+    }
+}
+
+@mixin down($size) {
+    $bp: map.get($breakpoints, $size);
+    $max: $bp - f.em(1);
+
+    @media (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin between($lower, $upper) {
+    $min: map.get($breakpoints, $lower);
+    $max: map.get($breakpoints, $upper) - f.em(1);
+
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+
+
+

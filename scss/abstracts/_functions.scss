@@ -1,0 +1,26 @@
+@use 'sass:math';
+/* -------------------------------------------------------------
+    UNIT HELPERS
+    Convert pixel values → rem/em.
+    Accepts unitless numbers only.
+------------------------------------------------------------- */
+
+@function rem($pixel) {
+    @if math.is-unitless($pixel) {
+        @return math.div($pixel, 16) * 1rem;
+    }
+    @else {
+        @error 'Don\t use units when using the rem() function; only numbers.';
+    }
+}
+
+@function em($pixel, $context: 16) {
+    @if math.is-unitless($pixel) and math.is-unitless($context) {
+        @return math.div($pixel, $context) * 1em;
+    }
+    @else {
+        @error 'Don\t use units when using the em() function; only numbers.';
+    }
+}
+
+

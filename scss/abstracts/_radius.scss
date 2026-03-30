@@ -1,0 +1,12 @@
+@use '../abstracts/functions' as f;
+
+@layer tokens {
+    :root {
+        --r-sm:     #{f.rem(8)};
+        --r-xl:   #{f.rem(24)};
+    }
+}
+
+
+
+

@@ -1,0 +1,15 @@
+@use '../abstracts/functions' as f;
+
+@layer tokens {
+    :root {
+        --sp-100: #{f.rem(8)}; 
+        --sp-300: #{f.rem(24)};  
+        --sp-400: #{f.rem(32)}; 
+        --sp-500: #{f.rem(40)};  
+        --sp-600: #{f.rem(48)}; 
+        --sp-1000: #{f.rem(80)};  
+    }
+}
+
+
+
